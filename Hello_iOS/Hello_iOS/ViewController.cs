@@ -9,6 +9,7 @@ namespace Hello_iOS {
 
     public override void ViewDidLoad() {
       base.ViewDidLoad();
+      PhoneNumberText.ResignFirstResponder();
       CallButton.TouchUpInside += (sender, e) => {
         var url = new NSUrl("tel:" + PhoneNumberText.Text);
         if (!UIApplication.SharedApplication.OpenUrl(url)) {
