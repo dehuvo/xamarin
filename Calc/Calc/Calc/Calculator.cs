@@ -11,8 +11,8 @@ namespace Calc {
             Display = value;
           }
           Back.ChangeCanExecute();
-          Operator.ChangeCanExecute();
           Digit.ChangeCanExecute();
+          Operator.ChangeCanExecute();
           Equal.ChangeCanExecute();
         }
       }
@@ -65,7 +65,6 @@ namespace Calc {
           Op = s;
           Op1 = Number;
           Input = "";
-          Operator.ChangeCanExecute();
         }
       }, s => Input == "" && s == "-" || Op1 == null && IsNumber());
 
@@ -73,6 +72,7 @@ namespace Calc {
         Input = calculate(Op, (double) Op1, Number).ToString();
         Op1 = null;
         Operator.ChangeCanExecute();
+        Equal.ChangeCanExecute();
       }, () => Op1 != null && IsNumber() && (Number != 0 || Op != "/"));
     }
     public Command Back     { private set; get; }
