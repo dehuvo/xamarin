@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calc;assembly=Calc"
+             x:Class="Calc.MainPage"
+             Title="Xamarin Calculator">
+  <ContentPage.BindingContext>
+    <local:Calculator/>
+  </ContentPage.BindingContext>
+  <ContentPage.Resources>
+    <Style TargetType="Label" x:Key="Display">
+      <Setter Property="FontSize" Value="Default" />
+      <Setter Property="Text" Value="{Binding Display}" />
+    </Style>
+    <Style TargetType="Button" x:Key="ButtonFont">
+      <Setter Property="FontSize" Value="Large" />
+      <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style TargetType="Button" x:Key="Back" BasedOn="{StaticResource ButtonFont}">
+      <Setter Property="Button.Command" Value="{Binding Back}" />
+    </Style>
+    <Style TargetType="Button" x:Key="Clear" BasedOn="{StaticResource ButtonFont}">
+      <Setter Property="Button.Command" Value="{Binding Clear}" />
+    </Style>
+    <Style TargetType="Button" x:Key="N" BasedOn="{StaticResource ButtonFont}">
+      <Setter Property="Button.Command" Value="{Binding Digit}" />
+    </Style>
+    <Style TargetType="Button" x:Key="O" BasedOn="{StaticResource ButtonFont}">
+      <Setter Property="Button.Command" Value="{Binding Operator}" />
+    </Style>
+    <Style TargetType="Button" x:Key="E" BasedOn="{StaticResource ButtonFont}">
+      <Setter Property="Button.Command" Value="{Binding Equal}" />
+    </Style>
+  </ContentPage.Resources>
+  <Grid Padding="10,0,10,0" HorizontalOptions="Center" VerticalOptions="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="2*" />
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="3*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid Grid.ColumnSpan="4" Grid.Row="0" Grid.Column="0">
+      <Frame>
+        <Label Text="Xamarin Calculator" FontAttributes="Bold" FontSize="Large"
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+      </Frame>
+    </Grid>
+    <Grid Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0">
+      <Frame OutlineColor="Azure">
+        <Label Style="{StaticResource Display}" 
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+      </Frame>
+    </Grid>
+    <Button Text="Back"  Style="{StaticResource Back}"  Grid.Row="1" Grid.Column="2" />
+    <Button Text="Clear" Style="{StaticResource Clear}" Grid.Row="1" Grid.Column="3" />
+    <Button Text="1" CommandParameter="1" Style="{StaticResource N}" Grid.Row="2" Grid.Column="0" />
+    <Button Text="2" CommandParameter="2" Style="{StaticResource N}" Grid.Row="2" Grid.Column="1" />
+    <Button Text="3" CommandParameter="3" Style="{StaticResource N}" Grid.Row="2" Grid.Column="2" />
+    <Button Text="+" CommandParameter="+" Style="{StaticResource O}" Grid.Row="2" Grid.Column="3" />
+    <Button Text="4" CommandParameter="4" Style="{StaticResource N}" Grid.Row="3" Grid.Column="0" />
+    <Button Text="5" CommandParameter="5" Style="{StaticResource N}" Grid.Row="3" Grid.Column="1" />
+    <Button Text="6" CommandParameter="6" Style="{StaticResource N}" Grid.Row="3" Grid.Column="2" />
+    <Button Text="&#x2212;" CommandParameter="-" Style="{StaticResource O}" Grid.Row="3" Grid.Column="3" />
+    <Button Text="7" CommandParameter="7" Style="{StaticResource N}" Grid.Row="4" Grid.Column="0" />
+    <Button Text="8" CommandParameter="8" Style="{StaticResource N}" Grid.Row="4" Grid.Column="1" />
+    <Button Text="9" CommandParameter="9" Style="{StaticResource N}" Grid.Row="4" Grid.Column="2" />
+    <Button Text="&#x00D7;" CommandParameter="*" Style="{StaticResource O}" Grid.Row="4" Grid.Column="3" />
+    <Button Text="0" CommandParameter="0" Style="{StaticResource N}" Grid.Row="5" Grid.Column="0" />
+    <Button Text="." CommandParameter="." Style="{StaticResource N}" Grid.Row="5" Grid.Column="1" />
+    <Button Text="=" CommandParameter="=" Style="{StaticResource E}" Grid.Row="5" Grid.Column="2" />
+    <Button Text="&#x00F7;" CommandParameter="/" Style="{StaticResource O}" Grid.Row="5" Grid.Column="3" />
+  </Grid>
+</ContentPage>
