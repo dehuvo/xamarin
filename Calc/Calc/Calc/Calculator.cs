@@ -92,8 +92,8 @@ namespace Calc {
       return 0;
     }
 
-    private void OnPropertyChanged([CallerMemberName] string propertyName = null) {
-      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    private void OnPropertyChanged([CallerMemberName] string name = null) {
+      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
     public event PropertyChangedEventHandler PropertyChanged;
   }
