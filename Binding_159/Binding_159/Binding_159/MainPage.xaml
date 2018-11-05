@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Binding_159.ViewModel;assembly=Binding_159"
+             x:Class="Binding_159.MainPage">
+  <ContentPage.BindingContext>
+    <viewModel:EmpViewModel/>
+  </ContentPage.BindingContext>
+  <StackLayout Margin="10" Orientation="Vertical"
+               VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+    <Entry Text="{Binding Ename}" />
+    <Label Text="{Binding Message}" />
+    <Button Text="당신을 소개하세요." Command="{Binding Introduce}" />
+  </StackLayout>
+</ContentPage>

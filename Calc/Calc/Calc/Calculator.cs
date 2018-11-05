@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 namespace Calc {
@@ -22,7 +23,7 @@ namespace Calc {
       private set {
         if (display != value) {
           display = value;
-          OnPropertyChanged("Display");
+          OnPropertyChanged();
           Clear.ChangeCanExecute();
         }
       }
@@ -91,10 +92,8 @@ namespace Calc {
       return 0;
     }
 
-    private void OnPropertyChanged(string propertyName) {
-      if (PropertyChanged != null) {
-        PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-      }
+    private void OnPropertyChanged([CallerMemberName] string propertyName = null) {
+      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
     public event PropertyChangedEventHandler PropertyChanged;
   }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66FDC04F-763E-4A1C-87F4-11D58CEE4900}</ProjectGuid>
+    <ProjectGuid>{3F524B8E-3469-47AC-8791-4F2DF01630E2}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Calc\Calc.csproj">
-      <Project>{DFA84827-9268-4084-88E3-CAB76B0092FD}</Project>
+      <Project>{CF16CD40-DD2D-4222-8B90-5842519CCED4}</Project>
       <Name>Calc</Name>
     </ProjectReference>
   </ItemGroup>

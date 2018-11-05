@@ -4,31 +4,16 @@
              xmlns:local="clr-namespace:Calc;assembly=Calc"
              x:Class="Calc.MainPage"
              Title="Xamarin Calculator">
-  <ContentPage.BindingContext>
-    <local:Calculator/>
-  </ContentPage.BindingContext>
-  <ContentPage.Resources>
-    <Style TargetType="Button" x:Key="Font">
-      <Setter Property="FontSize" Value="Large" />
-      <Setter Property="FontAttributes" Value="Bold" />
-    </Style>
-    <Style TargetType="Button" x:Key="Back" BasedOn="{StaticResource Font}">
-      <Setter Property="Command" Value="{Binding Back}" />
-    </Style>
-    <Style TargetType="Button" x:Key="Clear" BasedOn="{StaticResource Font}">
-      <Setter Property="Command" Value="{Binding Clear}" />
-    </Style>
-    <Style TargetType="Button" x:Key="N" BasedOn="{StaticResource Font}">
-      <Setter Property="Command" Value="{Binding Digit}" />
-    </Style>
-    <Style TargetType="Button" x:Key="O" BasedOn="{StaticResource Font}">
-      <Setter Property="Command" Value="{Binding Operator}" />
-    </Style>
-    <Style TargetType="Button" x:Key="E" BasedOn="{StaticResource Font}">
-      <Setter Property="Command" Value="{Binding Equal}" />
-    </Style>
-  </ContentPage.Resources>
   <Grid Padding="5" HorizontalOptions="Center" VerticalOptions="Start">
+    <Grid.BindingContext>
+      <local:Calculator/>
+    </Grid.BindingContext>
+    <Grid.Resources>
+      <Style TargetType="Button">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="FontAttributes" Value="Bold" />
+      </Style>
+    </Grid.Resources>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
@@ -47,26 +32,26 @@
       <Label Text="Xamarin Calculator" FontAttributes="Bold" FontSize="Large"
              HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
     </Frame>
-    <Label Text="{Binding Display}" FontSize="Medium" BackgroundColor="FloralWhite"
-           VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
-           Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
-    <Button Text="Back"  Style="{StaticResource Back}"  Grid.Row="1" Grid.Column="2" />
-    <Button Text="Clear" Style="{StaticResource Clear}" Grid.Row="1" Grid.Column="3" />
-    <Button Text="1" CommandParameter="1" Style="{StaticResource N}" Grid.Row="2" Grid.Column="0" />
-    <Button Text="2" CommandParameter="2" Style="{StaticResource N}" Grid.Row="2" Grid.Column="1" />
-    <Button Text="3" CommandParameter="3" Style="{StaticResource N}" Grid.Row="2" Grid.Column="2" />
-    <Button Text="+" CommandParameter="+" Style="{StaticResource O}" Grid.Row="2" Grid.Column="3" />
-    <Button Text="4" CommandParameter="4" Style="{StaticResource N}" Grid.Row="3" Grid.Column="0" />
-    <Button Text="5" CommandParameter="5" Style="{StaticResource N}" Grid.Row="3" Grid.Column="1" />
-    <Button Text="6" CommandParameter="6" Style="{StaticResource N}" Grid.Row="3" Grid.Column="2" />
-    <Button Text="&#x2212;" CommandParameter="-" Style="{StaticResource O}" Grid.Row="3" Grid.Column="3" />
-    <Button Text="7" CommandParameter="7" Style="{StaticResource N}" Grid.Row="4" Grid.Column="0" />
-    <Button Text="8" CommandParameter="8" Style="{StaticResource N}" Grid.Row="4" Grid.Column="1" />
-    <Button Text="9" CommandParameter="9" Style="{StaticResource N}" Grid.Row="4" Grid.Column="2" />
-    <Button Text="&#x00D7;" CommandParameter="*" Style="{StaticResource O}" Grid.Row="4" Grid.Column="3" />
-    <Button Text="0" CommandParameter="0" Style="{StaticResource N}" Grid.Row="5" Grid.Column="0" />
-    <Button Text="." CommandParameter="." Style="{StaticResource N}" Grid.Row="5" Grid.Column="1" />
-    <Button Text="=" CommandParameter="=" Style="{StaticResource E}" Grid.Row="5" Grid.Column="2" />
-    <Button Text="&#x00F7;" CommandParameter="/" Style="{StaticResource O}" Grid.Row="5" Grid.Column="3" />
+    <Label Text="{Binding Display}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+           BackgroundColor="FloralWhite" FontSize="Medium"
+           VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+    <Button Text="Back"  Command="{Binding Back}"  Grid.Row="1" Grid.Column="2" />
+    <Button Text="Clear" Command="{Binding Clear}" Grid.Row="1" Grid.Column="3" />
+    <Button Text="1" CommandParameter="1" Command="{Binding Digit}" Grid.Row="2" Grid.Column="0" />
+    <Button Text="2" CommandParameter="2" Command="{Binding Digit}" Grid.Row="2" Grid.Column="1" />
+    <Button Text="3" CommandParameter="3" Command="{Binding Digit}" Grid.Row="2" Grid.Column="2" />
+    <Button Text="+" CommandParameter="+" Command="{Binding Operator}" Grid.Row="2" Grid.Column="3" />
+    <Button Text="4" CommandParameter="4" Command="{Binding Digit}" Grid.Row="3" Grid.Column="0" />
+    <Button Text="5" CommandParameter="5" Command="{Binding Digit}" Grid.Row="3" Grid.Column="1" />
+    <Button Text="6" CommandParameter="6" Command="{Binding Digit}" Grid.Row="3" Grid.Column="2" />
+    <Button Text="&#x2212;" CommandParameter="-" Command="{Binding Operator}" Grid.Row="3" Grid.Column="3" />
+    <Button Text="7" CommandParameter="7" Command="{Binding Digit}" Grid.Row="4" Grid.Column="0" />
+    <Button Text="8" CommandParameter="8" Command="{Binding Digit}" Grid.Row="4" Grid.Column="1" />
+    <Button Text="9" CommandParameter="9" Command="{Binding Digit}" Grid.Row="4" Grid.Column="2" />
+    <Button Text="&#x00D7;" CommandParameter="*" Command="{Binding Operator}" Grid.Row="4" Grid.Column="3" />
+    <Button Text="0" CommandParameter="0" Command="{Binding Digit}" Grid.Row="5" Grid.Column="0" />
+    <Button Text="." CommandParameter="." Command="{Binding Digit}" Grid.Row="5" Grid.Column="1" />
+    <Button Text="=" Command="{Binding Equal}" Grid.Row="5" Grid.Column="2" />
+    <Button Text="&#x00F7;" CommandParameter="/" Command="{Binding Operator}" Grid.Row="5" Grid.Column="3" />
   </Grid>
 </ContentPage>
