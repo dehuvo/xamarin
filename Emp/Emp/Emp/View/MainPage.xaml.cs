@@ -14,16 +14,15 @@ namespace Emp {
 
     private void Button1_Click(object sender, System.EventArgs e) {
       Do("all", data => {
-          listView.ItemsSource = JsonConvert.DeserializeObject<List<Model.Emp>>(data);
+        listView.ItemsSource = JsonConvert.DeserializeObject<List<Model.Emp>>(data);
       });
     }
 
     private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
-      var Emp = e.SelectedItem as Model.Emp;
-      Do(Emp.Empno.ToString(), async data => {
-          var nextPage = new View.EmpViewPage();
-          nextPage.BindingContext = JsonConvert.DeserializeObject<Model.Emp>(data);
-          await Navigation.PushAsync(nextPage);
+      Do((e.SelectedItem as Model.Emp).Empno.ToString(), async data => {
+        await Navigation.PushAsync(new View.EmpViewPage {
+          BindingContext = JsonConvert.DeserializeObject<Model.Emp>(data)
+        });
       });
     }
 
