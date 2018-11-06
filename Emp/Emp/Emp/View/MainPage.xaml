@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Emp.MainPage">
+  <Grid>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Button x:Name="Button1" Grid.Row="0" Margin="10"
+              Text="사원 리스트 보기" Clicked="Button1_Click" />
+      <ListView x:Name="listView" Grid.Row="1"
+                HorizontalOptions="FillAndExpand"
+                HasUnevenRows="True"
+                ItemSelected="listView_ItemSelected">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid HorizontalOptions="FillAndExpand" Padding="10">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="1*"/>
+                  <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding Empno}"
+                       Grid.Row="0" Grid.Column="0" TextColor="Red"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="{Binding Ename}"
+                       Grid.Row="0" Grid.Column="1" TextColor="Blue"
+                       HorizontalTextAlignment="Center"/>
+                <BoxView HeightRequest="1" Margin="0,5,5,0"
+                         BackgroundColor="Gray" Grid.Row="2"
+                         Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" />
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </Grid>
+    <ActivityIndicator x:Name="activityIndicator" IsRunning="True"
+                       IsVisible="false" Color="Green"/>
+  </Grid>
+</ContentPage>

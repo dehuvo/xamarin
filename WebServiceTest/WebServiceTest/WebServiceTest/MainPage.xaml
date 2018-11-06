@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ xmlns:local="clr-namespace:WebServiceTest"
+ x:Class="WebServiceTest.MainPage">
+  <StackLayout>
+    <Label Text="이름을 입력하세요?"/>
+    <Entry x:Name="txtName" Text=""/>
+    <Button x:Name="button1" Text="스프링 웹서비스 호출하기"
+Clicked="Button1_Click"/>
+    <Label x:Name="label1"/>
+  </StackLayout>
+</ContentPage>

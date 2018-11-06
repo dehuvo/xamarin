@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceTest.Android", "WebServiceTest\WebServiceTest.Android\WebServiceTest.Android.csproj", "{30E79291-0EC9-4C92-9B3D-43C80DC7B897}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceTest", "WebServiceTest\WebServiceTest\WebServiceTest.csproj", "{851B4E5B-7D17-46A3-B2E8-F153FF979925}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30E79291-0EC9-4C92-9B3D-43C80DC7B897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E79291-0EC9-4C92-9B3D-43C80DC7B897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E79291-0EC9-4C92-9B3D-43C80DC7B897}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{30E79291-0EC9-4C92-9B3D-43C80DC7B897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E79291-0EC9-4C92-9B3D-43C80DC7B897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E79291-0EC9-4C92-9B3D-43C80DC7B897}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{851B4E5B-7D17-46A3-B2E8-F153FF979925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851B4E5B-7D17-46A3-B2E8-F153FF979925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851B4E5B-7D17-46A3-B2E8-F153FF979925}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{851B4E5B-7D17-46A3-B2E8-F153FF979925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851B4E5B-7D17-46A3-B2E8-F153FF979925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851B4E5B-7D17-46A3-B2E8-F153FF979925}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BCAEF62-27C1-43C0-BD34-4B40337690AD}
+	EndGlobalSection
+EndGlobal

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Backward_176.MainPage"
              Title="Slider Transforms Page">
-  <Grid>
+  <Grid Padding="10,0,10,100">
     <Grid.RowDefinitions>
       <RowDefinition Height="*" />
       <RowDefinition Height="Auto" />
@@ -15,30 +15,31 @@
       <ColumnDefinition Width="Auto" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
-    <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-      <Label x:Name="label" Text="TEXT" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Label x:Name="label" Text="TEXT" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+           HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
     <Label BindingContext="{x:Reference scaleSlider}"
            Text="{Binding Value, StringFormat='Scale = {0:F1}'}"
            Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" />
-    <Slider x:Name="scaleSlider" BindingContext="{x:Reference label}"
-            Grid.Row="1" Grid.Column="1" Maximum="10" Value="{Binding Scale, Mode=TwoWay}" />
+    <Slider x:Name="scaleSlider" Grid.Row="1" Grid.Column="1"
+            BindingContext="{x:Reference label}"
+            Value="{Binding Scale, Mode=TwoWay}" Maximum="10" />
     <Label BindingContext="{x:Reference rotationSlider}"
            Text="{Binding Value, StringFormat='Rotation = {0:F0}'}"
            Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" />
-    <Slider x:Name="rotationSlider" BindingContext="{x:Reference label}"
-            Grid.Row="2" Grid.Column="1" Maximum="360"
-            Value="{Binding Rotation, Mode=OneWayToSource}" />
+    <Slider x:Name="rotationSlider" Grid.Row="2" Grid.Column="1"
+            BindingContext="{x:Reference label}"
+            Value="{Binding Rotation, Mode=OneWayToSource}" Maximum="360" />
     <Label BindingContext="{x:Reference rotationXSlider}"
            Text="{Binding Value, StringFormat='RotationX = {0:F0}'}"
            Grid.Row="3" Grid.Column="0"  VerticalTextAlignment="Center" />
-    <Slider x:Name="rotationXSlider" BindingContext="{x:Reference label}"
-            Grid.Row="3" Grid.Column="1" Maximum="360"
-            Value="{Binding RotationX, Mode=OneWayToSource}" />
+    <Slider x:Name="rotationXSlider" Grid.Row="3" Grid.Column="1"
+            BindingContext="{x:Reference label}"
+            Value="{Binding RotationX, Mode=OneWayToSource}" Maximum="360" />
     <Label BindingContext="{x:Reference rotationYSlider}"
            Text="{Binding Value, StringFormat='RotationY = {0:F0}'}"
            Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" />
-    <Slider x:Name="rotationYSlider" BindingContext="{x:Reference label}"
-            Grid.Row="4" Grid.Column="1" Maximum="360"
-            Value="{Binding RotationY, Mode=OneWayToSource}" />
-  </Grid></ContentPage>
+    <Slider x:Name="rotationYSlider" Grid.Row="4" Grid.Column="1"
+            BindingContext="{x:Reference label}"
+            Value="{Binding RotationY, Mode=OneWayToSource}"  Maximum="360" />
+  </Grid>
+</ContentPage>

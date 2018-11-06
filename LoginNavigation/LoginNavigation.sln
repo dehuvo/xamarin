@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginNavigation.Android", "LoginNavigation\LoginNavigation.Android\LoginNavigation.Android.csproj", "{0328C633-2DAE-4DCC-B9D5-EA117C50880E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginNavigation", "LoginNavigation\LoginNavigation\LoginNavigation.csproj", "{48432DE4-CCE0-40F9-A67B-40B094AB9F45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0328C633-2DAE-4DCC-B9D5-EA117C50880E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0328C633-2DAE-4DCC-B9D5-EA117C50880E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0328C633-2DAE-4DCC-B9D5-EA117C50880E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0328C633-2DAE-4DCC-B9D5-EA117C50880E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0328C633-2DAE-4DCC-B9D5-EA117C50880E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0328C633-2DAE-4DCC-B9D5-EA117C50880E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{48432DE4-CCE0-40F9-A67B-40B094AB9F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48432DE4-CCE0-40F9-A67B-40B094AB9F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48432DE4-CCE0-40F9-A67B-40B094AB9F45}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{48432DE4-CCE0-40F9-A67B-40B094AB9F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48432DE4-CCE0-40F9-A67B-40B094AB9F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48432DE4-CCE0-40F9-A67B-40B094AB9F45}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {815BAA39-37E4-414B-B43D-E0F571EB6C04}
+	EndGlobalSection
+EndGlobal
