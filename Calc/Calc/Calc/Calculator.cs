@@ -70,10 +70,10 @@ namespace Calc {
       }, s => Input == "" && s == "-" || Op1 == null && IsNumber());
 
       Equal = new Command(() => {
-        Input = calculate(Op, (double) Op1, Number).ToString();
+        double result = calculate(Op, (double) Op1, Number);
         Op1 = null;
-        Operator.ChangeCanExecute();
-        Equal.ChangeCanExecute();
+        input = "";
+        Input = result.ToString();
       }, () => Op1 != null && IsNumber() && (Number != 0 || Op != "/"));
     }
     public Command Back     { private set; get; }
