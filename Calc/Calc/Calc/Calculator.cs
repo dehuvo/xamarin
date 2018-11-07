@@ -4,8 +4,18 @@ using Xamarin.Forms;
 
 namespace Calc {
   public class Calculator : INotifyPropertyChanged {
-    public string Input {
+    public string Display {
       private set {
+        if (display != value) {
+          display = value;
+          OnPropertyChanged();
+          Clear.ChangeCanExecute();
+        }
+      }
+      get { return display; }
+    }
+    private string Input {
+      set {
         if (input != value) {
           input = value;
           if (value != "") {
@@ -19,26 +29,25 @@ namespace Calc {
       }
       get { return input; }
     }
-    public string Display {
-      private set {
-        if (display != value) {
-          display = value;
-          OnPropertyChanged();
-          Clear.ChangeCanExecute();
-        }
-      }
-      get { return display; }
-    }
-    private string input = "";
-    private string display = "";
+    private string  display = "";
+    private string  input = "";
+    private string  Op;   // Opertaor
+    private double? Op1;  // Operand 1
 
-    public bool IsNumber() {
+    private bool IsNumber() {
       return input != "" && input != "." && input != "-" && input != "-.";
     }
-    public double Number { get { return double.Parse(input); } }
+    private double Number { get { return double.Parse(input); } }
 
-    public string  Op  { private set; get; }  // Opertaor
-    public double? Op1 { private set; get; }  // Operand 1
+    private double calculate(double a, double b) {
+      switch (Op) {
+        case "+": return a + b;
+        case "-": return a - b;
+        case "*": return a * b;
+        case "/": return a / b;
+      }
+      return 0;
+    }
 
     public Calculator() {
       Back = new Command(() => {
@@ -70,7 +79,7 @@ namespace Calc {
       }, s => Input == "" && s == "-" || Op1 == null && IsNumber());
 
       Equal = new Command(() => {
-        double result = calculate(Op, (double) Op1, Number);
+        double result = calculate((double) Op1, Number);
         Op1 = null;
         input = "";
         Input = result.ToString();
@@ -81,16 +90,6 @@ namespace Calc {
     public Command Digit    { private set; get; }
     public Command Operator { private set; get; }
     public Command Equal    { private set; get; }
-
-    private static double calculate(string op, double op1, double op2) {
-      switch (op) {
-        case "+": return op1 + op2;
-        case "-": return op1 - op2;
-        case "*": return op1 * op2;
-        case "/": return op1 / op2;
-      }
-      return 0;
-    }
 
     private void OnPropertyChanged([CallerMemberName] string name = null) {
       PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
