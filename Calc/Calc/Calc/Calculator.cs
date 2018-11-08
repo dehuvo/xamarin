@@ -34,8 +34,10 @@ namespace Calc {
     private string  Op;   // Opertaor
     private double? Op1;  // Operand 1
 
-    private bool IsNumber() {
-      return input != "" && input != "." && input != "-" && input != "-.";
+    private bool IsNumber {
+      get {
+        return input != "" && input != "." && input != "-" && input != "-.";
+      }
     }
     private double Number { get { return double.Parse(input); } }
 
@@ -76,14 +78,14 @@ namespace Calc {
           Op1 = Number;
           Input = "";
         }
-      }, s => Input == "" && s == "-" || Op1 == null && IsNumber());
+      }, s => Input == "" && s == "-" || Op1 == null && IsNumber);
 
       Equal = new Command(() => {
         double result = calculate((double) Op1, Number);
         Op1 = null;
         input = "";
         Input = result.ToString();
-      }, () => Op1 != null && IsNumber() && (Number != 0 || Op != "/"));
+      }, () => Op1 != null && IsNumber && (Number != 0 || Op != "/"));
     }
     public Command Back     { private set; get; }
     public Command Clear    { private set; get; }
