@@ -31,15 +31,19 @@ namespace Calc {
     }
     private string  display = "";
     private string  input = "";
-    private string  Op;   // Opertaor
-    private double? Op1;  // Operand 1
 
     private bool IsNumber {
       get {
         return input != "" && input != "." && input != "-" && input != "-.";
       }
     }
-    private double Number { get { return double.Parse(input); } }
+    private double Number {
+      get {
+        return double.Parse(input);
+      }
+    }
+    private double? Op1;  // Operand 1
+    private string  Op;   // Opertaor
 
     private double calculate(double a, double b) {
       switch (Op) {
