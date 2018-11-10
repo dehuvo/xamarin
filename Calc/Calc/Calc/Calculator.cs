@@ -37,11 +37,8 @@ namespace Calc {
         return input != "" && input != "." && input != "-" && input != "-.";
       }
     }
-    private double Number {
-      get {
-        return double.Parse(input);
-      }
-    }
+    private double Number { get { return double.Parse(input); } }
+
     private double? Op1;  // Operand 1
     private string  Op;   // Opertaor
 
