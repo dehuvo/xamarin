@@ -29,8 +29,8 @@ namespace Calc {
       }
       get { return input; }
     }
-    private string  display = "";
-    private string  input = "";
+    private string display = "";
+    private string input = "";
 
     private bool IsNumber {
       get {
